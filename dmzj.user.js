@@ -154,7 +154,8 @@
                             alert(text);
                         }
                         else {
-                            prompt(text, JSON.stringify(failed));
+                            alert(text+'\n  订阅失败的部分请在浏览器控制台窗口复制，重新尝试批量订阅');
+                            console.log(JSON.stringify(failed));
                         }
                     }
                     else {
