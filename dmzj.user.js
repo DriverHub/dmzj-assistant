@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          DMZJ Helper
 // @namespace     https://github.com/DriverHub/dmzj-assistant
-// @version       0.1
+// @version       0.1.1
 // @description   网站功能增强
 // @match         http://i.dmzj.com/*
 // @match         http://manhua.dmzj.com/*
@@ -154,7 +154,7 @@
                             alert(text);
                         }
                         else {
-                            alert(text+'\n  订阅失败的部分请在浏览器控制台窗口复制，重新尝试批量订阅');
+                            alert(text+'\n订阅失败的部分请在浏览器控制台窗口复制，重新尝试批量订阅');
                             console.log(JSON.stringify(failed));
                         }
                     }
