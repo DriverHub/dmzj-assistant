@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          DMZJ Helper
 // @namespace     https://github.com/DriverHub/dmzj-assistant
-// @version       0.1.1
+// @version       0.1.2
 // @description   网站功能增强
 // @match         http://i.dmzj.com/*
 // @match         http://manhua.dmzj.com/*
@@ -91,7 +91,7 @@
     // loadCSS end
 
     window.DmzjAssistant = {
-        version: '0.1',
+        version: '0.1.2',
         auto_expand_enable: true,
         teleport_enable: false,
         choosing_enable: false,
@@ -327,7 +327,7 @@
                     };
                 });
             }
-            return JSON.stringify(result);
+            return JSON.stringify(result,null,4);
         },
 
         importSubscribe: function(text) {
@@ -512,12 +512,18 @@
 
         if (uid) {
             _da.uid = uid;
+            /* //before 4/28 OLD
             var mh_found = $('#mh');
             var mh_clicked = $('#mh2');
             if (mh_found.length > 0 || mh_clicked.length > 0) {
                 enable_subscribe();
+            }*/
+            var mh_found = $('#yc1.optioned');
+            if (mh_found.length > 0) {
+                enable_subscribe();
             }
             else {
+                /*
                 if (location.hostname == 'manhua.dmzj.com') {
                     if (location.pathname == '/') {
                         // enable_import();
@@ -526,7 +532,7 @@
                         // enable_import2();
                     }
                 }
-                // enable_teleport();
+                // enable_teleport();*/
             }
             console.log('dmzj助手 - 启动完成');
             console.log('dmzj助手 - v' + _da.version + ' repo: https://github.com/DriverHub/dmzj-assistant author: UnluckyNinja, pa001024');
