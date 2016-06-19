@@ -2,7 +2,7 @@
 // @name          DMZJ Helper
 // @namespace     https://github.com/DriverHub/dmzj-assistant
 // @version       0.1.2
-// @description   网站功能增强
+// @description   提供动漫之家漫画的批量分享功能
 // @match         http://i.dmzj.com/*
 // @match         http://manhua.dmzj.com/*
 // @copyright     2016, DriverHub
@@ -327,7 +327,7 @@
                     };
                 });
             }
-            return JSON.stringify(result,null,4);
+            return JSON.stringify(result);
         },
 
         importSubscribe: function(text) {
