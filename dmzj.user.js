@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name          DMZJ Helper
+// @name          DMZJ Subscriber 动漫之家订阅助手
 // @namespace     https://github.com/DriverHub/dmzj-assistant
-// @version       0.1.2
-// @description   提供动漫之家漫画的批量分享功能
+// @version       0.1.3
+// @description   提供动漫之家漫画的订阅批量导入导出功能
 // @match         http://i.dmzj.com/*
 // @match         http://manhua.dmzj.com/*
 // @copyright     2016, DriverHub
@@ -91,7 +91,7 @@
     // loadCSS end
 
     window.DmzjAssistant = {
-        version: '0.1.2',
+        version: '0.1.3',
         auto_expand_enable: true,
         teleport_enable: false,
         choosing_enable: false,
@@ -342,13 +342,13 @@
                     }
                 });
                 if(!all_clear || Object.keys(obj).length == 0){
-                    alert("请输入正确的订阅代码！");
+                    alert("JSON数据有误，请检查分享代码格式！");
                     return;
                 }
             }
             catch (e) {
                 console.log(e);
-                alert("请输入正确的订阅代码！");
+                alert("解析JSON发生异常，请检查分享代码格式！");
             }
             self.subscribeAll(obj, function(id, jsondata) {
                     // nothing to do
